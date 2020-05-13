@@ -1,0 +1,53 @@
+﻿
+@{
+    ViewBag.Title = "Anasayfa";
+    Layout = null;
+}
+
+
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap.css" rel="stylesheet" type="text/css" />
+    <link href="~/Scripts/bootstrap.js" rel="stylesheet" type="text/css" />
+    <script src="~/Scripts/modernizr-2.8.3.js"></script>
+    <link href="@Url.Content("~/Content/bootstrap/bootstrap.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/scripts/bootstrap.js")" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-dark fixed-top bg-dark">
+        @*navbar navbar-inverse navbar-fixed-top*@
+        <button type="button" class="btn-success" data-toggle="collapse" data-target=".navbar-collapse">
+            @Html.ActionLink("Login", "Logout", "Login", new { area = "" }, new { @class = "navbar-brand" })
+        </button>
+    </div>
+    <br />
+
+    <h1 class="text-center">Havaalanı Otomasyonu</h1><br /><br /><br />
+    <h4 class="text-center">Devam Etmek İçin Lütfen <b class="text-danger">Giriş</b> Yapınız !</h4><br /><br /><br />
+    <br /><br /><br /><br /><br /><br />
+
+
+    <div class="container body-content">
+
+        <div class=" text-sm-center navbar-dark fixed-bottom bg-dark">
+
+            <p style="color:white">&copy; @DateTime.Now.Year - Serkan's ASP.NET Application</p>
+
+        </div>
+    </div>
+
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/bootstrap.bundle.js"></script>
+    <script src="~/Scripts/bootstrap.js"></script>
+    <script src="~/Scripts/bootstrap.bundle.min.js"></script>
+    <script src="~/Scripts/modernizr-2.8.3.js"></script>
+
+</body>
+</html>

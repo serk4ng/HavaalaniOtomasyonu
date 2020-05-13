@@ -1,0 +1,76 @@
+﻿@using HavaalaniOtomasyonuApp.Models
+@model Havaalani
+@{
+    ViewBag.Title = "Havaalani Ekle";
+}
+
+@using (@Html.BeginForm("Ekle", "Havaalani", FormMethod.Post))
+{
+    @*<div class="form-group">
+            @Html.LabelFor(h => h.Havaalani_Adi)
+            @Html.TextBoxFor(h => h.Havaalani_Adi, new { @class = "form-control" })
+            @Html.ValidationMessageFor(h => h.Havaalani_Adi)
+            <label id="lblhavaalaniAdiHata" style="display:none;color:red">Havaalanı Adı Giriniz!</label>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(h => h.Havaalani_Kodu)
+            @Html.TextBoxFor(h => h.Havaalani_Kodu, new { @class = "form-control" })
+            @Html.ValidationMessageFor(h => h.Havaalani_Kodu)
+            <label id="lblhavaalaniKoduHata" style="display:none;color:red">Havaalani Kodu Giriniz!</label>
+        </div>
+        <input type="submit" name="btnKaydet" value="Kaydet" class="btn btn-success" onclick="return BoslukKontrol()" />*@
+
+    <br />
+    <div class="container">
+        <div class="d-flex justify-content-center h-100 ">
+            <div class="card">
+                <div class="card-header  bg-dark">
+                    <h3 class="text-warning">Havaalanı Ekle</h3>
+                </div>
+                <div class="card-body">
+                    <form>
+                        <div class="input-group form-group">
+                            <div class="input-group-prepend">
+                                @Html.LabelFor(h => h.Havaalani_Adi) :
+                            </div>
+
+                            @Html.TextBoxFor(h => h.Havaalani_Adi, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(h => h.Havaalani_Adi)
+                            <label id="lblhavaalaniAdiHata" style="display:none;color:red">Havaalanı Adı Giriniz!</label>
+
+
+                        </div>
+                        <div class="input-group form-group">
+
+                            @Html.LabelFor(h => h.Havaalani_Kodu)
+                            @Html.TextBoxFor(h => h.Havaalani_Kodu, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(h => h.Havaalani_Kodu)
+                            <label id="lblhavaalaniKoduHata" style="display:none;color:red">Havaalani Kodu Giriniz!</label>
+                        </div>
+
+                        <div class="form-group">
+                            <button type="submit" class="btn float-right login_btn btn-warning" style="font-size:small" onclick="return BoslukKontrol()">Kaydet</button>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+}
+
+
+@section scripts{
+    <script>
+        function BoslukKontrol() {
+            var hatayok = true;
+            if ($("#Havaalani_Adi").val() == "" || $("#Havaalani_Kodu").val() == "") {
+                $("#lblhavaalaniAdiHata").show();
+                $("#lblhavaalaniKoduHata").show();
+                hatayok = false;
+            }
+            return hatayok;
+        }
+    </script>
+
+}

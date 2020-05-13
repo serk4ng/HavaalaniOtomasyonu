@@ -1,0 +1,39 @@
+﻿@model HavaalaniOtomasyonuApp.Models.Ucak
+@{
+    ViewBag.Title = "Duzenle";
+}
+
+<h2>Uçak Duzenle</h2>
+
+@using (Html.BeginForm("Duzenle", "Ucak", FormMethod.Post))
+{
+    @Html.HiddenFor(u => u.UcakId)
+    <div class="form-group">
+        @Html.LabelFor(u => u.Ucak_Adi)
+        @Html.TextBoxFor(u => u.Ucak_Adi, new { @class = "form-control" })
+        @Html.ValidationMessageFor(u => u.Ucak_Adi)
+        <label id="lblucakAdiHata" style="display:none;color:red">Uçak Adı Giriniz!</label>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(u => u.Kapasite)
+        @Html.TextBoxFor(u => u.Kapasite, new { @class = "form-control" })
+        @Html.ValidationMessageFor(u => u.Kapasite)
+        <label id="lblucakKapasiteHata" style="display:none;color:red">Kapasite Giriniz!</label>
+    </div>
+
+    <input type="submit" name="btnKaydet" value="Kaydet" class="btn btn-success" onclick="return BoslukKontrol() " />
+}
+
+@section scripts{
+    <script>
+        function BoslukKontrol() {
+            var hatayok = true;
+            if ($("#Ucak_Adi").val() == "" || $("#Kapasite").val() == "") {
+                $("#lblucakAdiHata").show();
+                $("#lblucakKapasiteHata").show();
+                hatayok = false;
+            }
+            return hatayok;
+        }
+    </script>
+}

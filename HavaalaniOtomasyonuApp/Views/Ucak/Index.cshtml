@@ -1,0 +1,31 @@
+﻿@using HavaalaniOtomasyonuApp.Models
+
+@{
+    ViewBag.Title = "Index";
+}
+@model IEnumerable<Ucak>
+
+<h2 class="text-white">Uçak Listesi</h2>
+
+<table class="table table-striped bg-dark">
+    <thead>
+        <tr class="text-warning">
+            <th>Id</th>
+            <th>Uçak Adı</th>
+            <th>Kapasite</th>
+            <th>İşlem</th>
+        </tr>
+
+    </thead>
+    <tbody style="">
+        @foreach (var item in Model)
+        {
+            <tr class="text-white">
+                <td class="text-danger">@item.UcakId</td>
+                <td>@item.Ucak_Adi</td>
+                <td>@item.Kapasite</td>
+                <td><a href="/Ucak/Duzenle/@item.UcakId" class="btn btn-sm btn-primary">Düzenle</a> <a href="/Ucak/Sil/@item.UcakId" class="btn btn-sm btn-danger" onclick="return confirm('@item.Ucak_Adi İsimli Uçağı silmek istediğinizden emin misiniz?')">Sil</a></td>
+            </tr>
+        }
+    </tbody>
+</table>

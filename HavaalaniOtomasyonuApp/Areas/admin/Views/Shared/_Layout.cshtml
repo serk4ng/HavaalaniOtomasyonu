@@ -1,0 +1,226 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <script src="~/Scripts/modernizr-2.8.3.js"></script>
+
+    <style>
+
+
+        html, body {
+            background-image: url('https://store-images.s-microsoft.com/image/apps.4970.66299512302371434.93c49c17-062b-4607-b061-5e552885c695.ecdf0fec-aa6a-4f17-b9f5-8414ef557a60?mode=scale&q=90&h=1080&w=1920');
+            background-size: cover;
+            background-repeat: no-repeat;
+            height: 100%;
+            font-family: 'Numans', sans-serif;
+        }
+
+        .container {
+            height: 100%;
+            align-content: center;
+        }
+
+        .card {
+            height: 370px;
+            margin-top: auto;
+            margin-bottom: auto;
+            width: 400px;
+            background-color: rgba(0,0,0,0.5) !important;
+        }
+
+        .card-header h3 {
+            color: white;
+        }
+
+        .card-header h2 {
+            color: white;
+        }
+
+        .card-header h4 {
+            color: white;
+        }
+
+        .card-header h5 {
+            color: white;
+        }
+
+        .card-header h3 {
+            color: white;
+        }
+
+
+
+        .input-group-prepend span {
+            width: 50px;
+            background-color: #FFC312;
+            color: black;
+            border: 0 !important;
+        }
+
+        input:focus {
+            outline: 0 0 0 0 !important;
+            box-shadow: 0 0 0 0 !important;
+        }
+
+        label {
+            font-size: small;
+            color: white;
+        }
+
+        .login_btn {
+            color: black;
+            background-color: #FFC312;
+            width: 100px;
+        }
+
+            .login_btn:hover {
+                color: black;
+                background-color: white;
+            }
+
+        .links {
+            color: white;
+        }
+
+            .links a {
+                margin-left: 4px;
+            }
+    </style>
+
+
+</head>
+<body>
+    <div class="navbar navbar-toggler navbar-dark fixed-top bg-dark">
+        <div class="container">
+            <div class="navbar-header">
+
+                @Html.ActionLink("Anasayfa", "Anasayfa", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+        </div>
+    </div>
+    @*<div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Anasayfa", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>*@
+    @*<div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar">
+                </span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            @Html.ActionLink("Havaalani Ekle", "Ekle", "Havaalani", new { area = "" }, new { @class = "navbar-brand" })
+        </div>
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            @Html.ActionLink("Havaalani Listesi", "Index", "Havaalani", new { area = "" }, new { @class = "navbar-brand" })
+        </div>*@
+
+    @*<div class="navbar-header ">
+            <ul class="nav navbar-nav">
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#"><b>Havaalani İşlemleri</b> <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="~/Havaalani/Ekle">Havaalani Ekle</a></li>
+                        <li><a href="~/Havaalani/Index">Havaalani Listesi</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <div class="navbar-right" style="background-color:darkred;">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            </button>
+            @Html.ActionLink(" Logout", "Logout", "Login", new { area = "" }, new { @class = "navbar-brand glyphicon glyphicon-log-in" })
+        </div>*@
+
+    @*<div class="navbar-header navbar-right" style="background-color:red;">
+                        <span class="glyphicon glyphicon-log-in">
+                            <button type="button" class="glyphicon glyphicon-log-in" data-toggle="collapse" data-target=".navbar-collapse">
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            @Html.ActionLink("Logout", "Logout", "Login", new { area = "" }, new { @class = "navbar-brand" })
+        </div>*@
+
+    @*<ul class="nav navbar-nav navbar-right">
+            <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+            <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+        </ul>*@
+    @*<div class="navbar-header">
+            <ul class="nav navbar-nav">
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Havaalani İşlemleri <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="~/Havaalani/Ekle">Havaalani Ekle</a></li>
+                        <li><a href="~/Havaalani/Index">Havaalani Listesi</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>*@
+
+
+
+    @*<div class="navbar-header">
+            <a class="navbar-brand" href="#">WebSiteName</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">Page 1 <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Page 1-1</a></li>
+                    <li><a href="#">Page 1-2</a></li>
+                    <li><a href="#">Page 1-3</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Page 2</a></li>
+        </ul>*@
+
+
+
+    @*<div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+            </ul>
+        </div>*@
+    @*</div>
+        </div>*@
+
+    <div class="container body-content">
+        @RenderBody()
+        <div class=" text-sm-center navbar-dark fixed-bottom bg-dark">
+
+            <p style="color:white">&copy; @DateTime.Now.Year - Serkan's ASP.NET Application</p>
+
+        </div>
+    </div>
+
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <!--Bootsrap 4 CDN-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <!--Fontawesome CDN-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+    <!--Custom styles-->
+    <link rel="stylesheet" type="text/css" href="styles.css">
+
+    @RenderSection("scripts", false)
+</body>
+</html>
