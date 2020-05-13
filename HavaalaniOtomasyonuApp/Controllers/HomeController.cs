@@ -28,7 +28,18 @@ namespace HavaalaniOtomasyonuApp.Controllers
            
         }
 
+        public ActionResult Ckeditor()
+        {
+            if (LoginController.check == true)
+            {
+                return View();
+            }
+            else
+            {
+                return Redirect("/admin");
+            }
 
+        }
 
     }
 }

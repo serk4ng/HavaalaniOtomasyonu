@@ -1,0 +1,20 @@
+﻿
+@{
+    ViewBag.Title = "Ckeditor";
+}
+
+<script src="~/ckeditor/ckeditor.js"></script>
+
+<div>
+    <h2 class="text-center text-dark">CkEditor</h2>
+</div>
+
+<div>
+    <div>
+        @Html.TextArea("DocumentText", "Serkan Gözlükaya", new { id = "ckeditor" })
+    </div>
+    <script type="text/javascript">
+        CKEDITOR.replace('ckeditor');
+    </script>
+</div>
+
