@@ -13,7 +13,8 @@ namespace HavaalaniOtomasyonuApp.Areas.admin.Controllers
     public class LoginController : Controller
     {
         // GET: admin/Login7
-        public static bool check = false;
+        //public static bool check = false;
+
         public ActionResult Index()
         {
             return View();
@@ -49,8 +50,9 @@ namespace HavaalaniOtomasyonuApp.Areas.admin.Controllers
                 var kullanici = db.Adminler.Where(a => a.username == a.username && a.password == model.password);
 
                 if (kullanici.Count()>0)
-                {               
-                    check = true;
+                {
+                    Session.Add("ActiveUser", model.username);
+                    //check = true;
                     FormsAuthentication.SetAuthCookie(model.username, true);
                     return RedirectToAction("Login","Login");
                    
@@ -67,7 +69,9 @@ namespace HavaalaniOtomasyonuApp.Areas.admin.Controllers
 
         public ActionResult Logout()
         {
-            check = false;
+            //check = false;
+            Session.Remove("ActiveUser");
+            Session.Clear();
             return Redirect("/admin");
         }
 

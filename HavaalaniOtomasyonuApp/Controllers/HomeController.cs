@@ -12,7 +12,7 @@ namespace HavaalaniOtomasyonuApp.Controllers
         // GET: Home
         public ActionResult Index()
         {
-            if (LoginController.check == true)
+            if (Session["ActiveUser"] != null)
             {
                 return View();
             }
@@ -30,7 +30,7 @@ namespace HavaalaniOtomasyonuApp.Controllers
 
         public ActionResult Ckeditor()
         {
-            if (LoginController.check == true)
+            if (Session["ActiveUser"] != null)
             {
                 return View();
             }

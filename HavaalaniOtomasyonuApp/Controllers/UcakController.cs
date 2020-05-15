@@ -15,7 +15,7 @@ namespace HavaalaniOtomasyonuApp.Controllers
         // GET: Ucak
         public ActionResult Index()
         {
-            if (LoginController.check == true)
+            if (Session["ActiveUser"] != null)
             {
                 using (HavaalaniContext ctx = new HavaalaniContext())
                 {
@@ -31,7 +31,7 @@ namespace HavaalaniOtomasyonuApp.Controllers
 
         public ActionResult Ekle()
         {
-            if (LoginController.check == true)
+            if (Session["ActiveUser"] != null)
             {
                 return View();
             }
@@ -44,7 +44,7 @@ namespace HavaalaniOtomasyonuApp.Controllers
         [HttpPost]
         public ActionResult Ekle(Ucak u)
         {
-            if (LoginController.check == true)
+            if (Session["ActiveUser"] != null)
             {
                 if (ModelState.IsValid)
                 {
@@ -71,7 +71,7 @@ namespace HavaalaniOtomasyonuApp.Controllers
 
         public ActionResult Duzenle(int? id)
         {
-            if (LoginController.check == true)
+            if (Session["ActiveUser"] != null)
             {
                 if (ModelState.IsValid)
                 {
@@ -93,7 +93,7 @@ namespace HavaalaniOtomasyonuApp.Controllers
         [HttpPost]
         public ActionResult Duzenle(Ucak u)
         {
-            if (LoginController.check == true)
+            if (Session["ActiveUser"] != null)
             {
                 if (ModelState.IsValid)
                 {
@@ -120,7 +120,7 @@ namespace HavaalaniOtomasyonuApp.Controllers
             using (HavaalaniContext ctx = new HavaalaniContext())
             {
 
-                if (LoginController.check == true)
+                if (Session["ActiveUser"] != null)
                 {
                     var u = ctx.Ucaklar.Find(id);
                     ctx.Ucaklar.Remove(u);
